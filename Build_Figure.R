@@ -137,7 +137,7 @@ Tropical<-read.csv('./Output Files/TropicalBiomesNamed2021.csv') %>% na.omit()
 Temperate2<-read.csv('./Output Files/TemperateBiomesChangeNamed.csv') %>% na.omit()
 Tropical2<-read.csv('./Output Files/TropicalBiomesChangeNamed.csv') %>% na.omit()
 
-#name each plot
+#name the plots
 a<-ggplot(Temperate, aes(x=temp,y=precip, color=Biome)) +
   geom_mark_hull(expand=0.01) +
   theme_bw() + 
@@ -145,9 +145,11 @@ a<-ggplot(Temperate, aes(x=temp,y=precip, color=Biome)) +
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(), 
         axis.line = element_line(colour = "black")) +
-  theme(legend.position = c(0.22, 0.75)) +
+  theme(legend.position = c(0.36, 0.85)) +
   theme(legend.title=element_blank(), 
-        legend.text=element_text(size=10))
+        legend.text=element_text(size=5),
+        legend.key.size=unit(0.5,"lines"),
+        legend.background = element_blank()) 
 
 b<-ggplot(Tropical, aes(x=temp,y=precip, color=Biome)) +
   geom_mark_hull(expand=0.01) +
@@ -156,9 +158,11 @@ b<-ggplot(Tropical, aes(x=temp,y=precip, color=Biome)) +
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(), 
         axis.line = element_line(colour = "black")) +
-  theme(legend.position = c(0.22, 0.65)) +
+  theme(legend.position = c(0.45, 0.85)) +
   theme(legend.title=element_blank(), 
-        legend.text=element_text(size=10))
+        legend.text=element_text(size=5),
+        legend.key.size=unit(0.5,"lines"),
+        legend.background = element_blank())
 
 c<-ggplot(Temperate2, aes(x=temp,y=precip, color=Biome)) +
   geom_mark_hull(expand=0.01) +
@@ -182,7 +186,8 @@ d<-ggplot(Tropical2, aes(x=temp,y=precip, color=Biome)) +
         axis.line = element_line(colour = "black")) +
   theme(legend.position="none")
 
-#build the composite figure
 png(file='./Output Files/GlobalBiomes.png',width=6.5,height=5.5,units="in",res=500)
-ggarrange(a,b,c,d, +rremobe("x.text"),labels=c("A","B","C","D"),ncol=2,nrow=2)
+ggarrange(a,b,c,d + rremove("x.text"),
+          labels=c("A","B","C","D"),
+          ncol=2,nrow=2)
 dev.off()
