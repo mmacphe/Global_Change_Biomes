@@ -2,7 +2,7 @@
 
 This respository includes instructions for building Figure 2 included in our manuscript "Predicting Bird Distributions Under Global Change" (MacPherson et al. 2021; link to be added soon). 
 
-If using this figure, please cite MacPherson et al. 2021.
+## If using this figure, please cite MacPherson et al. 2021.
 
 Our Figure builds Whittaker style climographs (Whittaker 1975) for the 14 global terrestrial biomes recongized by The World Wildlife Fund (https://www.worldwildlife.org/publications/terrestrial-ecoregions-of-the-world).
 
