@@ -1,6 +1,6 @@
 # Global Change Biomes
 
-This respository includes instructions for building Figure 2 included in our manuscript "Predicting Bird Distributions Under Global Change" (MacPherson et al. 2021; link to be added soon). 
+This respository includes instructions for building Figure 1 included in our manuscript "An introduction to predictive distribution modelling for conservation to welcome novel perspectives" (MacPherson et al. 2021; link to be added soon). 
 
 ## If using this figure, please cite MacPherson et al. 2021.
 
